@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ZestyDrop 🍋</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- HERO -->
+<h1>ZestyDrop 🍋</h1>
+<p>Earn points. Invite friends. Get rewarded.</p>
+
+<button onclick="openLogin()">Start Earning 🚀</button>
+
+<!-- LOGIN MODAL -->
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeLogin()">&times;</span>
+
+    <h3>Login to ZestyDrop</h3>
+
+    <button onclick="googleLogin()" class="google-btn">
+      Continue with Google
+    </button>
+  </div>
+</div>
+
+<!-- MAIN APP -->
+<div id="app" style="display:none;">
+
+  <h2>Dashboard 🍋</h2>
+
+  <!-- COUNTDOWN -->
+  <div class="countdown">
+    ⏳ Snapshot in:
+    <span id="days">0</span>d
+    <span id="hours">0</span>h
+    <span id="minutes">0</span>m
+    <span id="seconds">0</span>s
+  </div>
+
+  <!-- STATS -->
+  <p>💰 Points: <span id="points">0</span></p>
+  <p>👥 Referrals: <span id="referrals">0</span></p>
+
+  <!-- TASKS -->
+  <h3>Tasks</h3>
+  <button onclick="completeTask('tg',50)">Join Telegram (+50)</button>
+  <button onclick="completeTask('tw',50)">Follow Twitter (+50)</button>
+  <button onclick="completeTask('web',20)">Visit Website (+20)</button>
+
+  <!-- REFERRAL -->
+  <h3>Invite & Earn</h3>
+  <input type="text" id="refLink" readonly>
+  <button onclick="copyRef()">Copy Referral Link</button>
+  
+  <h3>🏆 Leaderboard</h3>
+
+<div id="leaderboard">
+  Loading...
+</div>
+
+</div>
+
+<!-- SCRIPTS -->
+<script type="module" src="firebase.js"></script>
+<script type="module" src="script.js"></script>
+
+</body>
+</html>

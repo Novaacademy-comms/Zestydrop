@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ZestyDrop 🍋</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- ADD THIS BELOW -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+  
+<body>
+
+<header class="navbar">
+  <h1>ZestyDrop 🍋</h1>
+  <button onclick="startApp()" class="btn">Start Earning</button>
+</header>
+
+<section class="hero">
+  <h2>Earn Early. Secure the Drop 🍋</h2>
+  <p>Complete tasks. Earn Zesty Points. Get rewarded.</p>
+</section>
+
+<!-- COUNTDOWN -->
+<div class="countdown-box">
+  <h2>⏳ Snapshot Countdown</h2>
+  <div class="timer">
+    <div><span id="days">0</span><p>Days</p></div>
+    <div><span id="hours">0</span><p>Hours</p></div>
+    <div><span id="minutes">0</span><p>Minutes</p></div>
+    <div><span id="seconds">0</span><p>Seconds</p></div>
+  </div>
+</div>
+
+<!-- APP -->
+<div id="app" style="display:none;">
+
+  <div class="dashboard">
+
+    <aside class="sidebar">
+      <ul>
+        <li>Dashboard</li>
+        <li>Tasks</li>
+        <li>Referrals</li>
+      </ul>
+    </aside>
+
+    <main class="main">
+
+      <div class="stats">
+        <div class="stat-card">💰 <span id="points">0</span> ZP</div>
+        <div class="stat-card">👥 <span id="referrals">0</span></div>
+      </div>
+
+      <!-- TASKS -->
+      <h3>Tasks</h3>
+      <div class="tasks">
+        <div class="task-card">
+          Join Telegram (+50)
+          <button onclick="completeTask('tg',50)">Do</button>
+        </div>
+
+        <div class="task-card">
+          Follow Twitter (+50)
+          <button onclick="completeTask('tw',50)">Do</button>
+        </div>
+
+        <div class="task-card">
+          Visit Website (+20)
+          <button onclick="completeTask('web',20)">Do</button>
+        </div>
+      </div>
+
+      <!-- REFERRAL -->
+      <div class="ref-box">
+        <h3>Invite & Earn</h3>
+        <input id="refLink" readonly>
+        <button onclick="copyRef()">Copy Link</button>
+        <button onclick="fakeReferral()">Test Referral</button>
+      </div>
+
+    </main>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
